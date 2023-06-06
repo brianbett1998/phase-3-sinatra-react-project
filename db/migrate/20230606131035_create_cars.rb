@@ -8,8 +8,6 @@ class CreateCars < ActiveRecord::Migration[6.1]
       t.decimal :price
       t.boolean :available, default: true
 
-      t.belongs_to :user, foreign_key: true
-
       t.timestamps
     end
   end
