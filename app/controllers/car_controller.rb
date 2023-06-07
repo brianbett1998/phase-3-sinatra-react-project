@@ -1,5 +1,5 @@
 
-class CarsController < Sinatra::Base
+class CarController < Sinatra::Base
     # Index action
     get '/cars' do
       @cars = Car.all
