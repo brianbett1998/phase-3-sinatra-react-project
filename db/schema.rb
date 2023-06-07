@@ -12,18 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2023_06_06_131050) do
 
-  create_table "bookings", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.integer "total_price"
-    t.integer "user_id"
-    t.integer "car_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["car_id"], name: "index_bookings_on_car_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
   create_table "cars", force: :cascade do |t|
     t.string "make"
     t.string "model"
