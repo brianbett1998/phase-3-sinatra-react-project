@@ -1,149 +1,149 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  #Add your routes here
-  
+  # Cars routes
+
   # Fetch cars
   get '/cars' do
-    @cars = Car.all
-    erb :'cars/index'
+    cars = Car.all
+    cars.to_json(include: :reviews)
   end
 
   # New action
   get '/cars/new' do
-    @car = Car.new
-    erb :'cars/new'
+    car = Car.new
+    car.to_json
   end
 
   # Create action
   post '/cars' do
-    @car = Car.new(params[:car])
-    if @car.save
-      redirect '/cars'
-    else
-      erb :'cars/new'
-    end
+    car = Car.new(params[:car])
+    car.save
+    car.to_json
   end
 
   # Show action
   get '/cars/:id' do
-    @car = Car.find(params[:id])
-    erb :'cars/show'
+    car = Car.find(params[:id])
+    car.to_json
   end
 
   # Edit action
   get '/cars/:id/edit' do
-    @car = Car.find(params[:id])
-    erb :'cars/edit'
+    car = Car.find(params[:id])
+    car.to_json
   end
 
   # Update action
   patch '/cars/:id' do
-    @car = Car.find(params[:id])
-    if @car.update(params[:car])
-      redirect '/cars'
-    else
-      erb :'cars/edit'
-    end
+    car = Car.find(params[:id])
+    car.update(params[:car])
+    car.to_json
   end
 
   # Delete action
   delete '/cars/:id' do
-    @car = Car.find(params[:id])
-    @car.destroy
-    redirect '/cars'
+    car = Car.find(params[:id])
+    car.destroy
+    car.to_json
   end
 
+  # Reviews routes
+
+  # Fetch reviews
   get '/reviews' do
-    @reviews = Review.all
-    erb :'reviews/index'
+    reviews = Review.all
+    reviews.to_json
   end
 
   # New action
   get '/reviews/new' do
-    @review = Review.new
-    erb :'reviews/new'
+    review = Review.new
+    review.to_json
   end
 
   # Create action
   post '/reviews' do
-    @review = Review.new(params[:review])
-    if @review.save
-      redirect '/reviews'
-    else
-      erb :'reviews/new'
-    end
+    review = Review.new(params[:review])
+    review.save
+    review.to_json
   end
 
   # Show action
   get '/reviews/:id' do
-    @review = Review.find(params[:id])
-    erb :'reviews/show'
+    review = Review.find(params[:id])
+    review.to_json
   end
 
   # Edit action
   get '/reviews/:id/edit' do
-    @review = Review.find(params[:id])
-    erb :'reviews/edit'
+    review = Review.find(params[:id])
+    review.to_json
   end
 
   # Update action
   patch '/reviews/:id' do
-    @review = Review.find(params[:id])
-    if @review.update(params[:review])
-      redirect '/reviews'
-    else
-      erb :'reviews/edit'
-    end
+    review = Review.find(params[:id])
+    review.update(params[:review])
+    review.to_json
   end
 
   # Delete action
   delete '/reviews/:id' do
-    @review = Review.find(params[:id])
-    @review.destroy
-    redirect '/reviews'
+    review = Review.find(params[:id])
+    review.destroy
+    review.to_json
   end
 
+  # Users routes
+
+  # Fetch users
   get '/users' do
-    @users = User.all
-    erb :'users/index'
+    users = User.all
+    users.to_json
   end
 
+  # New action
   get '/users/new' do
-    erb :'users/new'
+    user = User.new
+    user.to_json
   end
 
+  # Create action
   post '/users' do
-    @user = User.new(params[:user])
-    if @user.save
-      redirect '/users'
-    else
-      erb :'users/new'
-    end
+    user = User.new(params[:user])
+    user.save
+    user.to_json
   end
 
+  # Show action
   get '/users/:id' do
-    @user = User.find(params[:id])
-    erb :'users/show'
+    user = User.find(params[:id])
+    user.to_json
   end
 
+  # Edit action
   get '/users/:id/edit' do
-    @user = User.find(params[:id])
-    erb :'users/edit'
+    user = User.find(params[:id])
+    user.to_json
   end
 
+  # Update action
   patch '/users/:id' do
-    @user = User.find(params[:id])
-    if @user.update(params[:user])
-      redirect '/users'
-    else
-      erb :'users/edit'
-    end
+    user = User.find(params[:id])
+    user.update(params[:user])
+    user.to_json
   end
 
+  # Delete action
   delete '/users/:id' do
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect '/users'
+    user = User.find(params[:id])
+    user.destroy
+    user.to_json
+  end
+
+  # Root route
+  get '/' do
+    { message: "Welcome to my application!" }.to_json
   end
 end
