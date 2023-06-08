@@ -4,6 +4,9 @@ source "https://rubygems.org"
 # https://github.com/sinatra/sinatra
 gem "sinatra", "~> 2.1"
 
+
+gem 'i18n', '~> 1.8'
+
 # A fast and simple web server
 # https://github.com/macournoyer/thin
 gem "thin", "~> 1.8"
@@ -31,10 +34,6 @@ gem "rake", "~> 13.0"
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3", "~> 1.4"
 
-gem "puma"
-gem "falcon"
-gem "webrick"
-
 # Require all files in a folder
 gem "require_all", "~> 3.0"
 
@@ -45,6 +44,9 @@ group :development do
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
+  gem "puma"
+  gem "falcon"
+  gem "webrick"
 end
 
 # These gems will only be used when we are running tests

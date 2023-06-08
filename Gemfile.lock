@@ -158,6 +158,7 @@ DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner (~> 2.0)
   falcon
+  i18n (~> 1.8)
   pry (~> 0.14.1)
   puma
   rack-contrib (~> 2.3)
