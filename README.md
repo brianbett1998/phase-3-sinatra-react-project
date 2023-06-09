@@ -91,7 +91,10 @@ frontend. To do this, `cd` out of the backend project directory, and use
 
 ```console
 $ npx create-react-app my-app-frontend
+
+
 ```
+The link to the front end application is : https://github.com/brianbett1998/phase-3-react-sinatra-app
 
 After creating the project locally, you should also
 [create a repository on GitHub][create repo] to host your repo and help
