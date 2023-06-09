@@ -48,6 +48,8 @@ GEM
     database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
     eventmachine (1.2.7)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     falcon (0.42.3)
       async
       async-container (~> 0.16.0)
@@ -157,6 +159,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner (~> 2.0)
+  faker
   falcon
   i18n (~> 1.8)
   pry (~> 0.14.1)
