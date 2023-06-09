@@ -124,7 +124,7 @@ fetch("http://localhost:9292/test")
   sent.
 - Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
   your requests.
-
+ 
 ## Resources
 
 - [create-react-app][]
@@ -136,3 +136,9 @@ fetch("http://localhost:9292/test")
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
+
+Author :Brian Kiprono Bett
+email :briankibish@gmail.com
+      :brian.bett@student.moringaschool.com
+
+      
