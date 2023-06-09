@@ -8,7 +8,7 @@ class CreateCars < ActiveRecord::Migration[6.1]
       t.decimal :price
       t.boolean :available, default: true
 
-      t.timestamps
+      
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_06_131050) do
+ActiveRecord::Schema.define(version: 2023_06_08_182132) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -20,8 +20,7 @@ ActiveRecord::Schema.define(version: 2023_06_06_131050) do
     t.decimal "price"
     t.boolean "available", default: true
     t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
@@ -30,8 +29,6 @@ ActiveRecord::Schema.define(version: 2023_06_06_131050) do
     t.text "comment"
     t.integer "user_id"
     t.integer "car_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["car_id"], name: "index_reviews_on_car_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
